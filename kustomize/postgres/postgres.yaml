@@ -1,15 +1,16 @@
 apiVersion: postgres-operator.crunchydata.com/v1beta1
 kind: PostgresCluster
 metadata:
-  name: hippo
+  name: Albatross
 spec:
   postgresVersion: 16
   users:
-    - name: rhino
-      databases:
-        - zoo
+  - name: postgres
+    options: "SUPERUSER"
+    databases:
+        - admin
   instances:
-    - name: instance1
+    - name: local
       dataVolumeClaimSpec:
         accessModes:
         - "ReadWriteOnce"
